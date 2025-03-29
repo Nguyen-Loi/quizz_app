@@ -34,7 +34,7 @@ class _QuizAllListState extends State<QuizAllList> {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
 
-    final quizAll = StaggeredGrid.count(
+    final quizAll = StaggeredGridView.countBuilder(
       crossAxisCount: 4,
       mainAxisSpacing: 4.0,
       crossAxisSpacing: 4.0,

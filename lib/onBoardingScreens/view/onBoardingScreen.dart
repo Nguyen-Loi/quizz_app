@@ -92,8 +92,7 @@ class _HomePageState extends State<onBoardingScreenHome> {
                               Text(
                                 listOfItems[index].title,
                                 textAlign: TextAlign.center,
-                                style: textTheme.headline1?.copyWith(
-                                    fontSize: 24, fontWeight: FontWeight.bold)
+                            
                               ),
                             )),
 
@@ -104,7 +103,7 @@ class _HomePageState extends State<onBoardingScreenHome> {
                           Text(
                             listOfItems[index].subTitle,
                             textAlign: TextAlign.center,
-                            style: textTheme.headline2?.copyWith(fontSize: 16),
+                        
                           ),
                         ),
                       ],

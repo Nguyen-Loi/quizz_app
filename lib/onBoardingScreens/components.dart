@@ -61,7 +61,7 @@ class GetStartBtn extends StatelessWidget {
         decoration: BoxDecoration(
             color: MyColors.btnColor, borderRadius: BorderRadius.circular(15)),
         child: Center(
-          child: Text("Get Started now", style: textTheme.headline4),
+          child: Text("Get Started now"),
         ),
       ),
     );
@@ -97,7 +97,7 @@ class SkipBtn extends StatelessWidget {
         onTap: onTap,
         splashColor: MyColors.btnBorderColor,
         child: Center(
-          child: Text("Skip", style: textTheme.headline3),
+          child: Text("Skip"),
         ),
       ),
     );

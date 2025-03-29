@@ -89,7 +89,7 @@ class _QuizHomeState extends State<QuizHome> {
                   ),
                   SizedBox(
                     //height: MediaQuery.of(context).size.width * 0.8,
-                    height: 300,
+                    height: 100,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: mListings.length,
@@ -122,7 +122,6 @@ class NewQuiz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       margin: const EdgeInsets.only(left: 16),
       width: MediaQuery.of(context).size.width * 0.75,
@@ -141,13 +140,17 @@ class NewQuiz extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    text(model.title,
-                        fontSize: textSizeMedium,
-                        isLongText: true,
-                        fontFamily: fontMedium,
-                        isCentered: false),
-                    text(model.questions.length.toString(),
-                        textColor: quiztextColorSecondary),
+                    Text(
+                      model.title,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text("Num of Questions : ${model.questions.length}",
+                        style: const TextStyle(
+                          color: quiztextColorSecondary,
+                        )),
                   ],
                 ),
                 const Icon(Icons.arrow_forward, color: quiztextColorSecondary),

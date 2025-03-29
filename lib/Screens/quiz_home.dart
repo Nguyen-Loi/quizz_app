@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:quizz/Screens/quiz_details.dart';
-import 'package:quizz/Screens/quiz_new_list.dart';
 import 'package:quizz/model/quiz_model.dart';
 import 'package:quizz/onBoardingScreens/utils/quizz_data.dart';
 import 'package:quizz/utils/app_widget.dart';
@@ -84,11 +83,7 @@ class _QuizHomeState extends State<QuizHome> {
                         text(
                           quizlblviewall,
                           textColor: quiztextColorSecondary,
-                        ).onTap(() {
-                          setState(() {
-                            const QuizListing().launch(context);
-                          });
-                        }),
+                        ).onTap(() {}),
                       ],
                     ),
                   ),
@@ -127,7 +122,6 @@ class NewQuiz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var w = MediaQuery.of(context).size.width;
 
     return Container(
       margin: const EdgeInsets.only(left: 16),
@@ -152,7 +146,8 @@ class NewQuiz extends StatelessWidget {
                         isLongText: true,
                         fontFamily: fontMedium,
                         isCentered: false),
-                    text(model.questions.length.toString(), textColor: quiztextColorSecondary),
+                    text(model.questions.length.toString(),
+                        textColor: quiztextColorSecondary),
                   ],
                 ),
                 const Icon(Icons.arrow_forward, color: quiztextColorSecondary),

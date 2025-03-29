@@ -100,7 +100,6 @@ class _QuizDashboardState extends State<QuizDashboard> {
             children: <Widget>[
               quizItem(0, quizichomes, "Home"),
               quizItem(1, quizicquiz, "Quiz"),
-              quizItem(2, quizicuser, "Profile"),
             ],
           ),
         ),

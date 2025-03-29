@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:quizz/model/question_model.dart';
 import 'package:quizz/model/quiz_model.dart';
+import 'package:quizz/model/user_score.dart';
 import 'package:quizz/utils/app_widget.dart';
 import 'package:quizz/utils/quiz_colors.dart';
 
@@ -50,6 +53,17 @@ class _QuizPageState extends State<QuizPage> {
       );
     } else {
       _showScoreDialog();
+      FirebaseFirestore firestore = FirebaseFirestore.instance;
+      UserScore userScore = UserScore(
+          userId: FirebaseAuth.instance.currentUser!.uid,
+          quizId: _quiz.quizId,
+          totalPoints: _score,
+          createdDate: DateTime.now());
+      firestore.collection('user_scores').add(userScore.toMap()).then((value) {
+        debugPrint("Score added successfully");
+      }).catchError((error) {
+        debugPrint("Failed to add score: $error");
+      });
     }
   }
 

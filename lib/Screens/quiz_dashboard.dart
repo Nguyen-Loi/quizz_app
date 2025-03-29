@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quizz/Screens/quiz_all_list.dart';
+import 'package:quizz/Screens/quiz_history.dart';
 import 'package:quizz/Screens/quiz_home.dart';
 import 'package:quizz/utils/app_widget.dart';
 import 'package:quizz/utils/quiz_colors.dart';
@@ -20,7 +21,7 @@ class _QuizDashboardState extends State<QuizDashboard> {
 
   var pages = [
     const QuizHome(),
-    const QuizAllList(),
+    const QuizzHistory(),
   ];
 
   @override
@@ -99,7 +100,7 @@ class _QuizDashboardState extends State<QuizDashboard> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               quizItem(0, quizichomes, "Home"),
-              quizItem(1, quizicquiz, "Quiz"),
+              quizItem(1, quizicquiz, "History"),
             ],
           ),
         ),

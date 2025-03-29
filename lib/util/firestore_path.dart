@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirestorePath {
   static const String _quiz = 'Quizs';
-  static const String _transaction = 'Transactions';
   static const String _user = 'Users';
   static const String _devices = 'Devices';
   static const String _chats = 'Chats';

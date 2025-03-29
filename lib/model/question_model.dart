@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
+
 import 'package:quizz/enum/question_type.dart';
 import 'package:quizz/model/answer_model.dart';
 
@@ -9,29 +11,28 @@ class QuestionModel {
   final String content;
   final QuestionType type;
   final int points;
+  final List<AnswerModel> answers;
   QuestionModel({
     required this.questionId,
     required this.content,
     required this.type,
     required this.points,
+    required this.answers,
   });
-  final List<AnswerModel> answers = [];
-
-  void addAnswer(AnswerModel answer) {
-    answers.add(answer);
-  }
 
   QuestionModel copyWith({
     String? questionId,
     String? content,
     QuestionType? type,
     int? points,
+    List<AnswerModel>? answers,
   }) {
     return QuestionModel(
       questionId: questionId ?? this.questionId,
       content: content ?? this.content,
       type: type ?? this.type,
       points: points ?? this.points,
+      answers: answers ?? this.answers,
     );
   }
 
@@ -39,8 +40,9 @@ class QuestionModel {
     return <String, dynamic>{
       'questionId': questionId,
       'content': content,
-      'type': type.name,
+      'type': type,
       'points': points,
+      'answers': answers.map((x) => x.toMap()).toList(),
     };
   }
 
@@ -50,6 +52,11 @@ class QuestionModel {
       content: map['content'] as String,
       type: QuestionType.valueOf(map['type'] as String),
       points: map['points'] as int,
+      answers: List<AnswerModel>.from(
+        (map['answers'] as List).map<AnswerModel>(
+          (x) => AnswerModel.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
     );
   }
 
@@ -60,7 +67,7 @@ class QuestionModel {
 
   @override
   String toString() {
-    return 'Question(questionId: $questionId, content: $content, type: $type, points: $points)';
+    return 'QuestionModel(questionId: $questionId, content: $content, type: $type, points: $points, answers: $answers)';
   }
 
   @override
@@ -70,7 +77,8 @@ class QuestionModel {
     return other.questionId == questionId &&
         other.content == content &&
         other.type == type &&
-        other.points == points;
+        other.points == points &&
+        listEquals(other.answers, answers);
   }
 
   @override
@@ -78,6 +86,7 @@ class QuestionModel {
     return questionId.hashCode ^
         content.hashCode ^
         type.hashCode ^
-        points.hashCode;
+        points.hashCode ^
+        answers.hashCode;
   }
 }

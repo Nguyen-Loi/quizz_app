@@ -55,7 +55,7 @@ class _QuizSignInState extends State<QuizSignIn> {
 
       const QuizDashboard().launch(context);
     } catch (e) {
-      toast("Sign in failed. Please try again.");
+      toast(e.toString());
       Navigator.of(context).pop();
     }
   }

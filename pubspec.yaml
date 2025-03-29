@@ -43,3 +43,4 @@ flutter:
   assets:
     - images/quizz/
     - images/quizz/quiz_logo.jpg
+    - images/data/quiz.json

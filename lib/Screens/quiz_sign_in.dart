@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:quizz/Screens/quiz_dashboard.dart';
 import 'package:quizz/Screens/quiz_sign_up.dart';
+import 'package:quizz/controllers/quizzz_sign_in_controller.dart';
 import 'package:quizz/utils/app_widget.dart';
 import 'package:quizz/utils/quiz_colors.dart';
 import 'package:quizz/utils/quiz_constant.dart';
@@ -18,6 +19,47 @@ class QuizSignIn extends StatefulWidget {
 }
 
 class _QuizSignInState extends State<QuizSignIn> {
+  QuizzSignInController signInController = QuizzSignInController();
+  late TextEditingController _emailController;
+  late TextEditingController _passwordController;
+
+  @override
+  void initState() {
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+    super.initState();
+  }
+
+  void _signIn(BuildContext context) async {
+    String email = _emailController.text.trim();
+    String password = _passwordController.text.trim();
+
+    if (email.isEmpty || password.isEmpty) {
+      toast("Email and password cannot be empty");
+      return;
+    }
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return const Center(child: CircularProgressIndicator());
+      },
+    );
+
+    try {
+      await signInController.signIn(email, password);
+      if (!context.mounted) return;
+
+      Navigator.of(context).pop();
+
+      const QuizDashboard().launch(context);
+    } catch (e) {
+      toast("Sign in failed. Please try again.");
+      Navigator.of(context).pop();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     changeStatusColor(quizappbackground);
@@ -48,9 +90,11 @@ class _QuizSignInState extends State<QuizSignIn> {
                       radius: 10),
                   child: Column(
                     children: <Widget>[
-                      quizEditTextStyle(quizhintyouremail, isPassword: false),
+                      quizEditTextStyle(quizhintyouremail,
+                          isPassword: false, controller: _emailController),
                       quizDivider(),
-                      quizEditTextStyle(quizhintyourpassword),
+                      quizEditTextStyle(quizhintyourpassword,
+                          controller: _passwordController),
                     ],
                   ),
                 ),
@@ -73,11 +117,7 @@ class _QuizSignInState extends State<QuizSignIn> {
                     margin: const EdgeInsets.all(24.0),
                     child: quizButton(
                         textContent: quizlblcontinue,
-                        onPressed: () {
-                          setState(() {
-                            const QuizDashboard().launch(context);
-                          });
-                        }))
+                        onPressed: () => _signIn(context)))
               ],
             ),
           ),

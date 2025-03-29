@@ -5,8 +5,9 @@ import 'package:quizz/utils/quiz_colors.dart';
 
 import 'quiz_constant.dart';
 
-TextFormField quizEditTextStyle(var hintText, {isPassword = true}) {
+TextFormField quizEditTextStyle(var hintText, {isPassword = true, TextEditingController? controller}) {
   return TextFormField(
+    controller: controller,
     style: const TextStyle(fontSize: textSizeMedium, fontFamily: fontRegular),
     obscureText: isPassword,
     decoration: InputDecoration(

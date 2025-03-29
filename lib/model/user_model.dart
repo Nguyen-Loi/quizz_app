@@ -3,13 +3,13 @@ import 'dart:convert';
 
 import 'package:quizz/enum/user_role.dart';
 
-class User {
+class UserModel {
   final String userId;
   final String username;
   final String password;
   final String email;
   final UserRole role;
-  User({
+  UserModel({
     required this.userId,
     required this.username,
     required this.password,
@@ -18,14 +18,14 @@ class User {
   });
 
   
-  User copyWith({
+  UserModel copyWith({
     String? userId,
     String? username,
     String? password,
     String? email,
     UserRole? role,
   }) {
-    return User(
+    return UserModel(
       userId: userId ?? this.userId,
       username: username ?? this.username,
       password: password ?? this.password,
@@ -44,19 +44,19 @@ class User {
     };
   }
 
-  factory User.fromMap(Map<String, dynamic> map) {
-    return User(
+  factory UserModel.fromMap(Map<String, dynamic> map) {
+    return UserModel(
       userId: map['userId'] as String,
       username: map['username'] as String,
       password: map['password'] as String,
       email: map['email'] as String,
-      role: UserRoleExtension.fromString(map['role'] as String),
+      role: UserRole.valueOf(map['role'] as String),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory User.fromJson(String source) => User.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory UserModel.fromJson(String source) => UserModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
@@ -64,7 +64,7 @@ class User {
   }
 
   @override
-  bool operator ==(covariant User other) {
+  bool operator ==(covariant UserModel other) {
     if (identical(this, other)) return true;
   
     return 

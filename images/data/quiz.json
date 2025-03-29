@@ -1,0 +1,450 @@
+{
+    "quizzes": [
+      {
+        "quizId": "quiz_002",
+        "title": "Cuộc sống và triết lý",
+        "timeLimit": 45,
+        "createdAt": "2025-03-29T12:00:00Z",
+        "questions": [
+          {
+            "questionId": "q_001",
+            "content": "Ý nghĩa của cuộc sống là gì?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_001", "content": "Để hạnh phúc", "isCorrect": false },
+              { "answerId": "a_002", "content": "Để tìm kiếm tri thức", "isCorrect": false },
+              { "answerId": "a_003", "content": "Chủ quan và mang tính cá nhân", "isCorrect": true }
+            ]
+          },
+          {
+            "questionId": "q_002",
+            "content": "Hạnh phúc thực sự đến từ bên trong.",
+            "type": "TRUE_FALSE",
+            "points": 3,
+            "answers": [
+              { "answerId": "a_004", "content": "Đúng", "isCorrect": true },
+              { "answerId": "a_005", "content": "Sai", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_003",
+            "content": "Điều gì là yếu tố quan trọng để có một cuộc sống ý nghĩa?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 4,
+            "answers": [
+              { "answerId": "a_006", "content": "Giàu có", "isCorrect": false },
+              { "answerId": "a_007", "content": "Lòng trắc ẩn", "isCorrect": true },
+              { "answerId": "a_008", "content": "Danh vọng", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_004",
+            "content": "Thành công có được định nghĩa giống nhau cho tất cả mọi người không?",
+            "type": "TRUE_FALSE",
+            "points": 3,
+            "answers": [
+              { "answerId": "a_009", "content": "Đúng", "isCorrect": false },
+              { "answerId": "a_010", "content": "Sai", "isCorrect": true }
+            ]
+          },
+          {
+            "questionId": "q_005",
+            "content": "Điều gì là một trong những điều nuối tiếc phổ biến nhất của con người sau này?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_011", "content": "Làm việc quá nhiều", "isCorrect": true },
+              { "answerId": "a_012", "content": "Dành quá nhiều thời gian cho gia đình", "isCorrect": false },
+              { "answerId": "a_013", "content": "Đi du lịch quá nhiều", "isCorrect": false }
+            ]
+          }
+        ]
+      },
+      {
+        "quizId": "quiz_002",
+        "title": "Sự nghiệp",
+        "timeLimit": 45,
+        "createdAt": "2025-03-29T12:00:00Z",
+        "questions": [
+          {
+            "questionId": "q_001",
+            "content": "Ý nghĩa của cuộc sống là gì?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_001", "content": "Để hạnh phúc", "isCorrect": false },
+              { "answerId": "a_002", "content": "Để tìm kiếm tri thức", "isCorrect": false },
+              { "answerId": "a_003", "content": "Chủ quan và mang tính cá nhân", "isCorrect": true }
+            ]
+          },
+          {
+            "questionId": "q_002",
+            "content": "Hạnh phúc thực sự đến từ bên trong.",
+            "type": "TRUE_FALSE",
+            "points": 3,
+            "answers": [
+              { "answerId": "a_004", "content": "Đúng", "isCorrect": true },
+              { "answerId": "a_005", "content": "Sai", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_003",
+            "content": "Điều gì là yếu tố quan trọng để có một cuộc sống ý nghĩa?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 4,
+            "answers": [
+              { "answerId": "a_006", "content": "Giàu có", "isCorrect": false },
+              { "answerId": "a_007", "content": "Lòng trắc ẩn", "isCorrect": true },
+              { "answerId": "a_008", "content": "Danh vọng", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_004",
+            "content": "Thành công có được định nghĩa giống nhau cho tất cả mọi người không?",
+            "type": "TRUE_FALSE",
+            "points": 3,
+            "answers": [
+              { "answerId": "a_009", "content": "Đúng", "isCorrect": false },
+              { "answerId": "a_010", "content": "Sai", "isCorrect": true }
+            ]
+          },
+          {
+            "questionId": "q_005",
+            "content": "Điều gì là một trong những điều nuối tiếc phổ biến nhất của con người sau này?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_011", "content": "Làm việc quá nhiều", "isCorrect": true },
+              { "answerId": "a_012", "content": "Dành quá nhiều thời gian cho gia đình", "isCorrect": false },
+              { "answerId": "a_013", "content": "Đi du lịch quá nhiều", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_006",
+            "content": "Yếu tố nào quan trọng nhất để thành công trong sự nghiệp?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_014", "content": "Làm việc chăm chỉ", "isCorrect": true },
+              { "answerId": "a_015", "content": "Dựa vào may mắn", "isCorrect": false },
+              { "answerId": "a_016", "content": "Có nhiều mối quan hệ", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_007",
+            "content": "Sự đam mê có ảnh hưởng đến sự thành công trong sự nghiệp không?",
+            "type": "TRUE_FALSE",
+            "points": 3,
+            "answers": [
+              { "answerId": "a_017", "content": "Đúng", "isCorrect": true },
+              { "answerId": "a_018", "content": "Sai", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_008",
+            "content": "Điều gì giúp cân bằng giữa công việc và cuộc sống cá nhân?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 4,
+            "answers": [
+              { "answerId": "a_019", "content": "Quản lý thời gian tốt", "isCorrect": true },
+              { "answerId": "a_020", "content": "Chỉ tập trung vào công việc", "isCorrect": false },
+              { "answerId": "a_021", "content": "Bỏ qua sức khỏe để làm việc nhiều hơn", "isCorrect": false }
+            ]
+          }
+        ]
+      },
+      {
+        "quizzes": [
+          {
+            "quizId": "quiz_003",
+            "title": "Kiến thức về nấu ăn",
+            "timeLimit": 30,
+            "createdAt": "2025-03-29T12:00:00Z",
+            "questions": [
+              {
+                "questionId": "q_001",
+                "content": "Nhiệt độ thích hợp để nướng bánh mì là bao nhiêu độ C?",
+                "type": "MULTIPLE_CHOICE",
+                "points": 5,
+                "answers": [
+                  { "answerId": "a_001", "content": "150°C", "isCorrect": false },
+                  { "answerId": "a_002", "content": "180°C", "isCorrect": true },
+                  { "answerId": "a_003", "content": "220°C", "isCorrect": false }
+                ]
+              },
+              {
+                "questionId": "q_002",
+                "content": "Món ăn nào sau đây là đặc sản của Việt Nam?",
+                "type": "MULTIPLE_CHOICE",
+                "points": 4,
+                "answers": [
+                  { "answerId": "a_004", "content": "Sushi", "isCorrect": false },
+                  { "answerId": "a_005", "content": "Phở", "isCorrect": true },
+                  { "answerId": "a_006", "content": "Pizza", "isCorrect": false }
+                ]
+              },
+              {
+                "questionId": "q_003",
+                "content": "Nguyên liệu chính của món bánh xèo là gì?",
+                "type": "MULTIPLE_CHOICE",
+                "points": 5,
+                "answers": [
+                  { "answerId": "a_007", "content": "Bột gạo", "isCorrect": true },
+                  { "answerId": "a_008", "content": "Bột mì", "isCorrect": false },
+                  { "answerId": "a_009", "content": "Bột năng", "isCorrect": false }
+                ]
+              },
+              {
+                "questionId": "q_004",
+                "content": "Để làm món trứng chiên bông xốp, bạn nên làm gì trước khi chiên?",
+                "type": "MULTIPLE_CHOICE",
+                "points": 4,
+                "answers": [
+                  { "answerId": "a_010", "content": "Đánh trứng bông lên", "isCorrect": true },
+                  { "answerId": "a_011", "content": "Cho thêm nước", "isCorrect": false },
+                  { "answerId": "a_012", "content": "Để nguyên không đánh", "isCorrect": false }
+                ]
+              },
+              {
+                "questionId": "q_005",
+                "content": "Loại dầu nào tốt nhất để chiên thực phẩm mà không tạo ra nhiều khói?",
+                "type": "MULTIPLE_CHOICE",
+                "points": 5,
+                "answers": [
+                  { "answerId": "a_013", "content": "Dầu oliu nguyên chất", "isCorrect": false },
+                  { "answerId": "a_014", "content": "Dầu hạt cải", "isCorrect": true },
+                  { "answerId": "a_015", "content": "Dầu mè", "isCorrect": false }
+                ]
+              },
+              {
+                "questionId": "q_006",
+                "content": "Nước mắm thường được làm từ loại cá nào?",
+                "type": "MULTIPLE_CHOICE",
+                "points": 3,
+                "answers": [
+                  { "answerId": "a_016", "content": "Cá cơm", "isCorrect": true },
+                  { "answerId": "a_017", "content": "Cá hồi", "isCorrect": false },
+                  { "answerId": "a_018", "content": "Cá chép", "isCorrect": false }
+                ]
+              },
+              {
+                "questionId": "q_007",
+                "content": "Sử dụng muối trong nấu ăn có tác dụng gì?",
+                "type": "MULTIPLE_CHOICE",
+                "points": 4,
+                "answers": [
+                  { "answerId": "a_019", "content": "Tăng hương vị", "isCorrect": true },
+                  { "answerId": "a_020", "content": "Làm mềm thực phẩm", "isCorrect": true },
+                  { "answerId": "a_021", "content": "Chỉ để bảo quản thực phẩm", "isCorrect": false }
+                ]
+              },
+              {
+                "questionId": "q_008",
+                "content": "Loại thực phẩm nào giàu protein nhất?",
+                "type": "MULTIPLE_CHOICE",
+                "points": 3,
+                "answers": [
+                  { "answerId": "a_022", "content": "Thịt gà", "isCorrect": true },
+                  { "answerId": "a_023", "content": "Bông cải xanh", "isCorrect": false },
+                  { "answerId": "a_024", "content": "Khoai tây", "isCorrect": false }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "quizId": "quiz_004",
+        "title": "Kiến thức về công nghệ",
+        "timeLimit": 30,
+        "createdAt": "2025-03-29T12:00:00Z",
+        "questions": [
+          {
+            "questionId": "q_001",
+            "content": "Ngôn ngữ lập trình nào phổ biến nhất hiện nay?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_001", "content": "Python", "isCorrect": true },
+              { "answerId": "a_002", "content": "Java", "isCorrect": false },
+              { "answerId": "a_003", "content": "C++", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_002",
+            "content": "Hệ điều hành nào phổ biến nhất cho máy chủ?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 4,
+            "answers": [
+              { "answerId": "a_004", "content": "Windows", "isCorrect": false },
+              { "answerId": "a_005", "content": "Linux", "isCorrect": true },
+              { "answerId": "a_006", "content": "macOS", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_003",
+            "content": "Công nghệ AI thường sử dụng thuật toán nào?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_007", "content": "Machine Learning", "isCorrect": true },
+              { "answerId": "a_008", "content": "Blockchain", "isCorrect": false },
+              { "answerId": "a_009", "content": "Cloud Computing", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_004",
+            "content": "HTML là viết tắt của gì?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 4,
+            "answers": [
+              { "answerId": "a_010", "content": "Hyper Text Markup Language", "isCorrect": true },
+              { "answerId": "a_011", "content": "High Tech Modern Language", "isCorrect": false },
+              { "answerId": "a_012", "content": "Hyperlink Text Management Language", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_005",
+            "content": "Hacker mũ trắng là ai?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_013", "content": "Người bảo vệ hệ thống khỏi các cuộc tấn công mạng", "isCorrect": true },
+              { "answerId": "a_014", "content": "Người chuyên hack tài khoản người khác", "isCorrect": false },
+              { "answerId": "a_015", "content": "Người phát triển phần mềm", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_006",
+            "content": "Công nghệ blockchain có ứng dụng chính trong lĩnh vực nào?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 3,
+            "answers": [
+              { "answerId": "a_016", "content": "Tiền điện tử", "isCorrect": true },
+              { "answerId": "a_017", "content": "Chỉnh sửa hình ảnh", "isCorrect": false },
+              { "answerId": "a_018", "content": "Lập trình web", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_007",
+            "content": "Giao thức HTTP hoạt động trên cổng nào?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 4,
+            "answers": [
+              { "answerId": "a_019", "content": "80", "isCorrect": true },
+              { "answerId": "a_020", "content": "443", "isCorrect": false },
+              { "answerId": "a_021", "content": "22", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_008",
+            "content": "Nguyên tắc bảo mật thông tin bao gồm những yếu tố nào?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 3,
+            "answers": [
+              { "answerId": "a_022", "content": "Tính toàn vẹn, bảo mật, khả dụng", "isCorrect": true },
+              { "answerId": "a_023", "content": "Nhanh chóng, chính xác, dễ tiếp cận", "isCorrect": false },
+              { "answerId": "a_024", "content": "Chi phí thấp, dễ dàng sử dụng, miễn phí", "isCorrect": false }
+            ]
+          }
+        ]
+      },
+      {
+        "quizId": "quiz_005",
+        "title": "Kiến thức về iPhone và Samsung",
+        "timeLimit": 30,
+        "createdAt": "2025-03-29T12:00:00Z",
+        "questions": [
+          {
+            "questionId": "q_001",
+            "content": "Hệ điều hành nào được sử dụng trên iPhone?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_001", "content": "iOS", "isCorrect": true },
+              { "answerId": "a_002", "content": "Android", "isCorrect": false },
+              { "answerId": "a_003", "content": "HarmonyOS", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_002",
+            "content": "Samsung sử dụng hệ điều hành nào trên điện thoại thông minh của mình?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 4,
+            "answers": [
+              { "answerId": "a_004", "content": "Android", "isCorrect": true },
+              { "answerId": "a_005", "content": "iOS", "isCorrect": false },
+              { "answerId": "a_006", "content": "Windows Phone", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_003",
+            "content": "Cổng sạc nào được sử dụng trên iPhone 15?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_007", "content": "USB-C", "isCorrect": true },
+              { "answerId": "a_008", "content": "Lightning", "isCorrect": false },
+              { "answerId": "a_009", "content": "Micro-USB", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_004",
+            "content": "Dòng điện thoại Samsung cao cấp nhất hiện nay là gì?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 4,
+            "answers": [
+              { "answerId": "a_010", "content": "Galaxy S", "isCorrect": true },
+              { "answerId": "a_011", "content": "Galaxy A", "isCorrect": false },
+              { "answerId": "a_012", "content": "Galaxy M", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_005",
+            "content": "Apple sử dụng chip xử lý do công ty nào sản xuất cho iPhone?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 5,
+            "answers": [
+              { "answerId": "a_013", "content": "Apple tự sản xuất", "isCorrect": true },
+              { "answerId": "a_014", "content": "Samsung", "isCorrect": false },
+              { "answerId": "a_015", "content": "Qualcomm", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_006",
+            "content": "Samsung sản xuất và cung cấp linh kiện nào cho các hãng khác?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 3,
+            "answers": [
+              { "answerId": "a_016", "content": "Màn hình OLED", "isCorrect": true },
+              { "answerId": "a_017", "content": "Bộ vi xử lý A-series", "isCorrect": false },
+              { "answerId": "a_018", "content": "Phần mềm iOS", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_007",
+            "content": "Dịch vụ lưu trữ đám mây của Apple có tên là gì?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 4,
+            "answers": [
+              { "answerId": "a_019", "content": "iCloud", "isCorrect": true },
+              { "answerId": "a_020", "content": "Google Drive", "isCorrect": false },
+              { "answerId": "a_021", "content": "OneDrive", "isCorrect": false }
+            ]
+          },
+          {
+            "questionId": "q_008",
+            "content": "Dòng điện thoại gập mới nhất của Samsung là gì?",
+            "type": "MULTIPLE_CHOICE",
+            "points": 3,
+            "answers": [
+              { "answerId": "a_022", "content": "Galaxy Z Fold", "isCorrect": true },
+              { "answerId": "a_023", "content": "Galaxy Note", "isCorrect": false },
+              { "answerId": "a_024", "content": "Galaxy S Ultra", "isCorrect": false }
+            ]
+          }
+        ]
+      }
+    ]
+  }

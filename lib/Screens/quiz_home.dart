@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:quizz/Screens/quiz_details.dart';
 import 'package:quizz/Screens/quiz_new_list.dart';
-import 'package:quizz/Screens/quiz_search.dart';
-import 'package:quizz/model/quiz_models.dart';
+import 'package:quizz/model/quiz_model.dart';
+import 'package:quizz/onBoardingScreens/utils/quizz_data.dart';
 import 'package:quizz/utils/app_widget.dart';
 import 'package:quizz/utils/quiz_colors.dart';
 import 'package:quizz/utils/quiz_constant.dart';
-import 'package:quizz/utils/quiz_data_generator.dart';
 import 'package:quizz/utils/quiz_strings.dart';
 import 'package:quizz/utils/quiz_widget.dart';
 
@@ -22,12 +21,12 @@ class QuizHome extends StatefulWidget {
 }
 
 class _QuizHomeState extends State<QuizHome> {
-  late List<NewQuizModel> mListings;
+  late List<QuizModel> mListings;
 
   @override
   void initState() {
     super.initState();
-    mListings = getQuizData();
+    mListings = QuizzData.instance.getQuizzes();
   }
 
   @override
@@ -68,7 +67,6 @@ class _QuizHomeState extends State<QuizHome> {
                           padding: const EdgeInsets.all(10),
                           child: const Icon(Icons.search, color: quizwhite),
                         ).onTap(() {
-                          const QuizSearch().launch(context);
                           setState(() {});
                         })
                       ],
@@ -123,7 +121,7 @@ class _QuizHomeState extends State<QuizHome> {
 
 // ignore: must_be_immutable
 class NewQuiz extends StatelessWidget {
-  late NewQuizModel model;
+  late QuizModel model;
 
   NewQuiz(this.model, int pos, {super.key});
 
@@ -139,23 +137,6 @@ class NewQuiz extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Stack(
-            alignment: Alignment.topRight,
-            children: <Widget>[
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(16.0),
-                    topRight: Radius.circular(16.0)),
-                child: CachedNetworkImage(
-                    placeholder: placeholderWidgetFn() as Widget Function(
-                        BuildContext, String)?,
-                    imageUrl: model.quizImage,
-                    height: w * 0.4,
-                    width: MediaQuery.of(context).size.width * 0.75,
-                    fit: BoxFit.cover),
-              ),
-            ],
-          ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -166,12 +147,12 @@ class NewQuiz extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    text(model.quizName,
+                    text(model.title,
                         fontSize: textSizeMedium,
                         isLongText: true,
                         fontFamily: fontMedium,
                         isCentered: false),
-                    text(model.totalQuiz, textColor: quiztextColorSecondary),
+                    text(model.questions.length.toString(), textColor: quiztextColorSecondary),
                   ],
                 ),
                 const Icon(Icons.arrow_forward, color: quiztextColorSecondary),

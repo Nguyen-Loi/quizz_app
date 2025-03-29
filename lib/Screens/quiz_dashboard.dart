@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quizz/Screens/quiz_all_list.dart';
 import 'package:quizz/Screens/quiz_home.dart';
-import 'package:quizz/Screens/quiz_profile.dart';
 import 'package:quizz/utils/app_widget.dart';
 import 'package:quizz/utils/quiz_colors.dart';
 import 'package:quizz/utils/quiz_images.dart';
@@ -22,7 +21,6 @@ class _QuizDashboardState extends State<QuizDashboard> {
   var pages = [
     const QuizHome(),
     const QuizAllList(),
-    const QuizProfile(),
   ];
 
   @override

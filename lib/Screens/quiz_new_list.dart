@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:quizz/Screens/repo_screen.dart';
-import 'package:quizz/model/quiz_models.dart';
+import 'package:quizz/model/quiz_model.dart';
+import 'package:quizz/onBoardingScreens/utils/quizz_data.dart';
 import 'package:quizz/utils/app_widget.dart';
 import 'package:quizz/utils/quiz_colors.dart';
 import 'package:quizz/utils/quiz_constant.dart';
-import 'package:quizz/utils/quiz_data_generator.dart';
 import 'package:quizz/utils/quiz_images.dart';
 import 'package:quizz/utils/quiz_strings.dart';
 
@@ -21,7 +21,7 @@ class QuizListing extends StatefulWidget {
 }
 
 class _QuizListingState extends State<QuizListing> {
-  late List<NewQuizModel> mListings;
+  late List<QuizModel> mListings;
 
   var selectedGrid = true;
   var selectedList = false;
@@ -29,7 +29,7 @@ class _QuizListingState extends State<QuizListing> {
   @override
   void initState() {
     super.initState();
-    mListings = getQuizData();
+    mListings = QuizzData.instance.getQuizzes();
   }
 
   @override
@@ -51,34 +51,17 @@ class _QuizListingState extends State<QuizListing> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Stack(
-                alignment: Alignment.topRight,
-                children: <Widget>[
-                  ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(16.0),
-                        topRight: Radius.circular(16.0)),
-                    child: CachedNetworkImage(
-                        placeholder: placeholderWidgetFn() as Widget Function(
-                            BuildContext, String)?,
-                        imageUrl: mListings[index].quizImage,
-                        height: w * 0.4,
-                        width: MediaQuery.of(context).size.width / 0.25,
-                        fit: BoxFit.cover),
-                  ),
-                ],
-              ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    text(mListings[index].quizName,
+                    text(mListings[index].title,
                         fontSize: textSizeMedium,
                         isLongText: true,
                         fontFamily: fontMedium),
                     const SizedBox(height: 8),
-                    text(mListings[index].totalQuiz,
+                    text(mListings[index].questions.length.toString(),
                         textColor: quiztextColorSecondary),
                   ],
                 ),
@@ -107,19 +90,6 @@ class _QuizListingState extends State<QuizListing> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(16.0),
-                    topRight: Radius.circular(16.0)),
-                child: CachedNetworkImage(
-                  placeholder: placeholderWidgetFn() as Widget Function(
-                      BuildContext, String)?,
-                  imageUrl: mListings[index].quizImage,
-                  height: w * 0.4,
-                  width: MediaQuery.of(context).size.width / 0.25,
-                  fit: BoxFit.cover,
-                ),
-              ),
               Container(
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -130,12 +100,12 @@ class _QuizListingState extends State<QuizListing> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    text(mListings[index].quizName,
+                    text(mListings[index].title,
                             fontSize: textSizeMedium,
                             maxLine: 2,
                             fontFamily: fontMedium)
                         .paddingOnly(top: 8, left: 16, right: 16, bottom: 8),
-                    text(mListings[index].totalQuiz,
+                    text(mListings[index].questions.length.toString(),
                             textColor: quiztextColorSecondary)
                         .paddingOnly(left: 16, right: 16, bottom: 16),
                   ],

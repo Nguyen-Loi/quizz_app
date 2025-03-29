@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:quizz/Screens/quiz_card.dart';
-import 'package:quizz/model/quiz_models.dart';
+import 'package:quizz/model/quiz_model.dart';
+import 'package:quizz/onBoardingScreens/utils/quizz_data.dart';
 import 'package:quizz/utils/app_widget.dart';
 import 'package:quizz/utils/quiz_colors.dart';
 import 'package:quizz/utils/quiz_constant.dart';
-import 'package:quizz/utils/quiz_data_generator.dart';
 import 'package:quizz/utils/quiz_strings.dart';
 import 'package:quizz/utils/quiz_widget.dart';
 
@@ -19,12 +19,12 @@ class QuizDetails extends StatefulWidget {
 }
 
 class _QuizDetailsState extends State<QuizDetails> {
-  late List<QuizTestModel> mList;
+  late List<QuizModel> mList;
 
   @override
   void initState() {
     super.initState();
-    mList = quizGetData();
+    mList = QuizzData.instance.getQuizzes();
   }
 
   @override
@@ -69,10 +69,9 @@ class _QuizDetailsState extends State<QuizDetails> {
   }
 }
 
-// ignore: must_be_immutable, camel_case_types
 class quizList extends StatelessWidget {
   late var width;
-  late QuizTestModel model;
+  late QuizModel model;
 
   quizList(this.model, int pos, {super.key});
 
@@ -89,27 +88,17 @@ class quizList extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Container(
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: quizcolorsetting),
-                width: width / 6.5,
-                height: width / 6.5,
-                padding: const EdgeInsets.all(10),
-                child: commonCacheImageWidget(
-                  model.image,
-                ),
-              ),
               const SizedBox(
                 width: 16,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  text(model.type,
+                  text(model.title,
                       textColor: quiztextColorSecondary,
                       fontSize: textSizeSMedium),
                   text(
-                    model.heading,
+                    'Num of Questions : ${model.questions.length}',
                     fontFamily: fontMedium,
                   ),
                 ],
@@ -119,7 +108,7 @@ class quizList extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          text(model.description, textColor: quiztextColorSecondary),
+          text('Time : ${model.timeLimit} seconds', textColor: quiztextColorSecondary),
           const SizedBox(
             height: 16,
           ),

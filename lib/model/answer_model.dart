@@ -1,23 +1,22 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-class Answer {
+class AnswerModel {
   final String answerId;
   final String content;
   final bool isCorrect;
-  Answer({
+  AnswerModel({
     required this.answerId,
     required this.content,
     required this.isCorrect,
   });
-  
 
-  Answer copyWith({
+  AnswerModel copyWith({
     String? answerId,
     String? content,
     bool? isCorrect,
   }) {
-    return Answer(
+    return AnswerModel(
       answerId: answerId ?? this.answerId,
       content: content ?? this.content,
       isCorrect: isCorrect ?? this.isCorrect,
@@ -32,8 +31,8 @@ class Answer {
     };
   }
 
-  factory Answer.fromMap(Map<String, dynamic> map) {
-    return Answer(
+  factory AnswerModel.fromMap(Map<String, dynamic> map) {
+    return AnswerModel(
       answerId: map['answerId'] as String,
       content: map['content'] as String,
       isCorrect: map['isCorrect'] as bool,
@@ -42,19 +41,20 @@ class Answer {
 
   String toJson() => json.encode(toMap());
 
-  factory Answer.fromJson(String source) => Answer.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory AnswerModel.fromJson(String source) =>
+      AnswerModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  String toString() => 'Answer(answerId: $answerId, content: $content, isCorrect: $isCorrect)';
+  String toString() =>
+      'Answer(answerId: $answerId, content: $content, isCorrect: $isCorrect)';
 
   @override
-  bool operator ==(covariant Answer other) {
+  bool operator ==(covariant AnswerModel other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.answerId == answerId &&
-      other.content == content &&
-      other.isCorrect == isCorrect;
+
+    return other.answerId == answerId &&
+        other.content == content &&
+        other.isCorrect == isCorrect;
   }
 
   @override

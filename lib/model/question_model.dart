@@ -4,30 +4,30 @@ import 'dart:convert';
 import 'package:quizz/enum/question_type.dart';
 import 'package:quizz/model/answer_model.dart';
 
-class Question {
+class QuestionModel {
   final String questionId;
   final String content;
   final QuestionType type;
   final int points;
-  Question({
+  QuestionModel({
     required this.questionId,
     required this.content,
     required this.type,
     required this.points,
   });
-  final List<Answer> answers = [];
+  final List<AnswerModel> answers = [];
 
-  void addAnswer(Answer answer) {
+  void addAnswer(AnswerModel answer) {
     answers.add(answer);
   }
 
-  Question copyWith({
+  QuestionModel copyWith({
     String? questionId,
     String? content,
     QuestionType? type,
     int? points,
   }) {
-    return Question(
+    return QuestionModel(
       questionId: questionId ?? this.questionId,
       content: content ?? this.content,
       type: type ?? this.type,
@@ -44,18 +44,19 @@ class Question {
     };
   }
 
-  factory Question.fromMap(Map<String, dynamic> map) {
-    return Question(
+  factory QuestionModel.fromMap(Map<String, dynamic> map) {
+    return QuestionModel(
       questionId: map['questionId'] as String,
       content: map['content'] as String,
-      type: QuestionType.fromMap(map['type'] as Map<String,dynamic>),
+      type: QuestionType.valueOf(map['type'] as String),
       points: map['points'] as int,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Question.fromJson(String source) => Question.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory QuestionModel.fromJson(String source) =>
+      QuestionModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
@@ -63,21 +64,20 @@ class Question {
   }
 
   @override
-  bool operator ==(covariant Question other) {
+  bool operator ==(covariant QuestionModel other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.questionId == questionId &&
-      other.content == content &&
-      other.type == type &&
-      other.points == points;
+
+    return other.questionId == questionId &&
+        other.content == content &&
+        other.type == type &&
+        other.points == points;
   }
 
   @override
   int get hashCode {
     return questionId.hashCode ^
-      content.hashCode ^
-      type.hashCode ^
-      points.hashCode;
+        content.hashCode ^
+        type.hashCode ^
+        points.hashCode;
   }
 }

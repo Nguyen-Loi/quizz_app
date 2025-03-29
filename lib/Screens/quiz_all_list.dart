@@ -1,13 +1,12 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:quizz/Screens/quiz_details.dart';
-import 'package:quizz/model/quiz_models.dart';
+import 'package:quizz/model/quiz_model.dart';
+import 'package:quizz/onBoardingScreens/utils/quizz_data.dart';
 import 'package:quizz/utils/app_widget.dart';
 import 'package:quizz/utils/quiz_colors.dart';
 import 'package:quizz/utils/quiz_constant.dart';
-import 'package:quizz/utils/quiz_data_generator.dart';
 import 'package:quizz/utils/quiz_strings.dart';
 
 class QuizAllList extends StatefulWidget {
@@ -20,28 +19,26 @@ class QuizAllList extends StatefulWidget {
 }
 
 class _QuizAllListState extends State<QuizAllList> {
-  late List<NewQuizModel> mListings;
+  late List<QuizModel> _quizList;
   int selectedPos = 1;
 
   @override
   void initState() {
     super.initState();
     selectedPos = 1;
-    mListings = getQuizData();
+    _quizList = QuizzData.instance.getQuizzes();
   }
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-
     final quizAll = StaggeredGridView.countBuilder(
       crossAxisCount: 4,
       mainAxisSpacing: 4.0,
       crossAxisSpacing: 4.0,
-      
+
       staggeredTileBuilder: (index) => const StaggeredTile.fit(2),
       scrollDirection: Axis.vertical,
-      itemCount: mListings.length,
+      itemCount: _quizList.length,
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemBuilder: (context, index) {
@@ -52,20 +49,6 @@ class _QuizAllListState extends State<QuizAllList> {
             margin: const EdgeInsets.all(8),
             child: Column(
               children: <Widget>[
-                ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(16.0),
-                    topRight: Radius.circular(16.0),
-                  ),
-                  child: CachedNetworkImage(
-                    placeholder: placeholderWidgetFn() as Widget Function(
-                        BuildContext, String)?,
-                    imageUrl: mListings[index].quizImage,
-                    height: width * 0.4,
-                    width: width * 0.25,
-                    fit: BoxFit.cover,
-                  ),
-                ),
                 Container(
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -78,13 +61,13 @@ class _QuizAllListState extends State<QuizAllList> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       text(
-                        mListings[index].quizName,
+                        _quizList[index].title,
                         fontSize: textSizeMedium,
                         maxLine: 2,
                         fontFamily: fontMedium,
                       ).paddingOnly(top: 8, left: 16, right: 16, bottom: 8),
                       text(
-                        mListings[index].totalQuiz,
+                        _quizList[index].questions.length.toString(),
                         textColor: quiztextColorSecondary,
                       ).paddingOnly(left: 16, right: 16, bottom: 8),
                     ],
@@ -106,7 +89,7 @@ class _QuizAllListState extends State<QuizAllList> {
       crossAxisSpacing: 4.0,
       staggeredTileBuilder: (index) => const StaggeredTile.fit(2),
       scrollDirection: Axis.vertical,
-      itemCount: mListings.length,
+      itemCount: _quizList.length,
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemBuilder: (context, index) {
@@ -118,20 +101,6 @@ class _QuizAllListState extends State<QuizAllList> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(16.0),
-                    topRight: Radius.circular(16.0),
-                  ),
-                  child: CachedNetworkImage(
-                    placeholder: placeholderWidgetFn() as Widget Function(
-                        BuildContext, String)?,
-                    imageUrl: mListings[index].quizImage,
-                    height: width * 0.4,
-                    width: width * 0.25,
-                    fit: BoxFit.cover,
-                  ),
-                ),
                 Container(
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -144,13 +113,13 @@ class _QuizAllListState extends State<QuizAllList> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       text(
-                        mListings[index].quizName,
+                        _quizList[index].title,
                         fontSize: textSizeMedium,
                         maxLine: 2,
                         fontFamily: fontMedium,
                       ).paddingOnly(top: 8, left: 16, right: 16, bottom: 8),
                       text(
-                        mListings[index].totalQuiz,
+                        _quizList[index].questions.length.toString(),
                         textColor: quiztextColorSecondary,
                       ).paddingOnly(left: 16, right: 16, bottom: 16),
                       LinearProgressIndicator(

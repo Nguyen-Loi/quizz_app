@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:quizz/Screens/quiz_all_list.dart';
 import 'package:quizz/Screens/quiz_history.dart';
 import 'package:quizz/Screens/quiz_home.dart';
 import 'package:quizz/utils/app_widget.dart';
